@@ -1,0 +1,13 @@
+version: '3.8'  # Phiên bản của Docker Compose
+
+services:  # Khai báo các dịch vụ trong ứng dụng
+  web:  # Dịch vụ web
+    build: .  # Xây dựng hình ảnh từ thư mục hiện tại
+    ports:  # Cấu hình cổng
+      - "9093:9093"  
+    volumes:  # Gắn kết các thư mục
+      - .:/app  # Gắn thư mục hiện tại vào thư mục /app trong container
+    environment:  # Biến môi trường cho dịch vụ web
+      - FLASK_ENV=development  # Thiết lập chế độ phát triển cho Flask
+      - FLASK_APP=app.py  # Đặt tên tệp ứng dụng Flask
+    command: ["flask", "run", "--host=0.0.0.0", "--port=9093"]  # Lệnh để chạy khi khởi động dịch vụ
