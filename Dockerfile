@@ -26,4 +26,4 @@ ENV FLASK_RUN_HOST=0.0.0.0
 EXPOSE 5001
 
 # Chạy ứng dụng Flask với địa chỉ IP là 0.0.0.0 và cổng 5001
-CMD ["flask", "run", "--host=0.0.0.0", "--port=9093"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]
